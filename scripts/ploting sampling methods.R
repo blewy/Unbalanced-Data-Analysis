@@ -6,7 +6,8 @@ library(gridExtra)
 
 set.seed(2969)
 imbal_train <- twoClassSim(1000, intercept = -10, linearVars = 0)
-table(imbal_train$Class)
+
+#table(imbal_train$Class)
 
 # Set shape by cond
 p<- ggplot(imbal_train, aes(x=TwoFactor1, y=TwoFactor2, shape=Class,color=Class)) + geom_point()+ theme(legend.position=c(1,0.2),legend.justification=c(1,1))+ggtitle("Original Imbalance") + coord_cartesian(xlim = c(-5, 5),ylim = c(-5, 5)) 
